@@ -57,8 +57,8 @@ class PhysicsSim():
 
         ang_bounds = np.pi
         # Limit theta, meaning that if the quadcopter gets upside-down, the sim can finish.
-        self.angular_lower_bounds = np.array([-np.inf, -ang_bounds, -np.inf])
-        self.angular_upper_bounds = np.array([np.inf, ang_bounds, np.inf])
+        self.angular_lower_bounds = np.array([-np.inf, -np.inf, -np.inf])
+        self.angular_upper_bounds = np.array([np.inf, np.inf, np.inf])
         self.reached_limits = False
 
         self.reset()

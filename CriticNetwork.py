@@ -55,7 +55,8 @@ class CriticNetwork(object):
 
         h2 = Add()([h1,a1])
         h3 = Dense(HIDDEN2_UNITS, activation='relu')(h2)
-        V = Dense(action_dim,activation='linear')(h3)
+        # V = Dense(action_dim,activation='linear')(h3)
+        V = Dense(1,activation='linear')(h3)
 
         model = Model(inputs=[S,A],outputs=V)
         adam = Adam(lr=self.LEARNING_RATE)

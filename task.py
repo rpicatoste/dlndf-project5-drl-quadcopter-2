@@ -97,7 +97,10 @@ class Task():
             for key, value in new_rewards.items():
                 rewards[key] += value
             pose_all.append(self.sim.pose)
+
         next_state = np.concatenate(pose_all)
+        next_state = np.concatenate((next_state, rotor_speeds))
+
         # if self.sim.reached_limits:
         #     reward -= 50
 
